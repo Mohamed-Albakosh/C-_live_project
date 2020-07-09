@@ -1,0 +1,223 @@
+//Seeding database with dummy SeedAwards
+    <code>    
+		private void SeedAwards()
+        {
+            var awards = new List<Award>
+            {
+                new Award
+                {
+                    Year = 2017, Name = "Drammy", Type = AwardType.Finalist, Category = "Sound Design", Recipient = "Andrew Bray",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "Assistance").FirstOrDefault().ProductionId,
+                          //CastMemberId = context.CastMembers.Where(p => p.Name == "London Bauman").FirstOrDefault().CastMemberID,
+
+
+
+                },
+                 new Award
+                {
+                    Year = 2016, Name = "Drammy", Type = AwardType.Award, Category = "Outstanding Achievement", Recipient = "Scenic Artist,Mindy Barker",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "The Drunken City").FirstOrDefault().ProductionId,
+                          
+                },
+                new Award
+                {
+                    Year = 2016, Name = "Drammy", Type = AwardType.Finalist, Category = "Sound Design", Recipient = "Richard E.Moore",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "The Drunken City").FirstOrDefault().ProductionId,
+                },
+                new Award
+                {
+                    Year = 2015, Name = "Drammy", Type =AwardType.Award, Category = "Ensemble in a Play", 
+                          ProductionId = context.Productions.Where(prod => prod.Title == "Bob: A Life in Five Acts").FirstOrDefault().ProductionId,
+                },
+                new Award
+                {
+                    Year = 2015, Name = "Drammy", Type =AwardType.Award, Category = "Direction", Recipient = "Matthew B.Zrebski",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "Bob: A Life in Five Acts").FirstOrDefault().ProductionId ,
+                },
+                new Award
+                {
+                    Year = 2015, Name = "Drammy", Type =AwardType.Finalist, Category = "Ensemble in a Play",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "The School for Lies").FirstOrDefault().ProductionId,
+                },
+                new Award
+                {
+                    Year = 2014, Name = "Drammy", Type =AwardType.Award, Category = "Sound Design", Recipient = "Annalise Albright Woods",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "pool (no water)").FirstOrDefault().ProductionId,
+                },
+                new Award
+                {
+                    Year = 2014, Name = "Drammy", Type =AwardType.Finalist, Category = "Ensemble in a play ",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "pool (no water)").FirstOrDefault().ProductionId,
+                },
+                new Award
+                {
+                    Year = 2013, Name = "Drammy", Type =AwardType.Award, Category = "Actress in a supporting role", Recipient ="Brooke Calcagno",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "Mother Courage & Her Children").FirstOrDefault().ProductionId,
+                },
+                new Award
+                {
+                    Year = 2013, Name = "Drammy", Type =AwardType.Award, Category = "Sound design", Recipient ="Richard Moore",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "The Velvet Sky").FirstOrDefault().ProductionId,
+                },
+                new Award
+                {
+                    Year = 2012, Name = "Drammy", Type =AwardType.Award, Category = "Actor in a land role", Recipient ="Mario Calcagno",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "The American Pilot").FirstOrDefault().ProductionId,
+                },
+                new Award
+                {
+                    Year = 2012, Name = "Drammy", Type =AwardType.Award, Category = "Sound design", Recipient ="Em Gustason",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "The American Pilot").FirstOrDefault().ProductionId,
+                },
+                 new Award
+                {
+                    Year = 2010, Name = "Drammy", Type =AwardType.Award, Category = "Supporting Actress", Recipient ="Amy Newman",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "God's Ear").FirstOrDefault().ProductionId,
+                },
+                new Award
+                {
+                    Year = 2009, Name = "Drammy", Type =AwardType.Award, Category = "Supporting Actor", Recipient ="Garland Lyons",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "Romance").FirstOrDefault().ProductionId,
+                },
+                new Award
+                {
+                    Year = 2008, Name = "Drammy", Type =AwardType.Award, Category = "Outstanding puppeteering", OtherInfo = "in collaboration with Tears of Joy Theatre",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "The Long Christmas Ride Home").FirstOrDefault().ProductionId,
+                },
+                new Award
+                {
+                    Year = 2007, Name = "Drammy", Type =AwardType.Award, Category = "Set design", Recipient ="Ben Plont",
+                          ProductionId = context.Productions.Where(prod => prod.Title == "Escape from Happiness").FirstOrDefault().ProductionId,
+                },
+                //new Award
+                //{
+                //    Year = 2001, Name = "Drammy", Type =AwardType.Award, Category = "Supporting Actress", Recipient ="Andrea White",
+                //          ProductionId = context.Productions.Where(prod => prod.Title == "Hellcab").FirstOrDefault().ProductionId,
+                //},
+                //new Award
+                //{
+                //    Year = 2001, Name = "Drammy", Type =AwardType.Award, Category = "Supporting Actress", Recipient ="Lorraine Bahr",
+                //          ProductionId = context.Productions.Where(prod => prod.Title == "Lion in the Streets").FirstOrDefault().ProductionId,
+                //},
+                //new Award
+                //{
+                //    Year = 2001, Name = "Drammy", Type =AwardType.Award, Category = "Supporting Actress", Recipient ="Ted Schulz",
+                //          ProductionId = context.Productions.Where(prod => prod.Title == "The Grey Zone").FirstOrDefault().ProductionId,
+                //},
+                //new Award
+                //{
+                //    Year = 2000, Name = "Drammy", Type =AwardType.Award, Category = "Outstanding direction", Recipient ="Michael Griggs",
+                //          ProductionId = context.Productions.Where(prod => prod.Title == "The Grey Zone").FirstOrDefault().ProductionId,
+                //},
+            };
+            awards.ForEach(award => context.Awards.AddOrUpdate(aw => aw.AwardId, award));
+
+            context.SaveChanges();
+        }
+		
+		
+		<!---------------------------------------------------------->
+		.production-index-container .card {
+    border: 2px solid rgba(0, 0, 0, 0.125);
+}
+/*-----Classes and styling for LoginFailure view------*/
+/*using button styles from sponsor index to match theme 
+.button-redirect { 
+        }
+        .currentpro-imgtran:hover {
+            transform: scale(1.05, 1.05);
+            transform: scale(1.07, 1.07);
+            opacity: 0.2;
+            z-index: 2;
+        }
+        .currentpro-text {
+            text-align: center;
+            position:absolute;
+            text-align:center;
+            margin-top: -50%;                                                               /*styles text under image*/
+        }
+        
+        .currentpro-fontsize {
+            font-size: 1.5vw;
+            font-size: 1.05rem;
+        }
+        @media (max-width:550px){
+            .currentpro-fontsize {
+                font-size:.8rem;
+            }
+        }
+        .currentpro-txthover { 
+            opacity: 0;
+        }
+        .currentpro-imgtran:hover + .currentpro-txthover {
+            
+            opacity: 1;                                                                             /*makes it so text does not appear until image is hovered*/
+        }
+
+Current.cshtml
+-10
++11
+/TheatreCMS/Views/Productions/Current.cshtml
+View
+</style>*@
+<div class="container-fluid">
+<div class="container-fluid ">
+@* Cycle through each object displaying individual results*@
+  
+  <div class="row mx-2">
+  <div class="row mx-2 ">
+    @foreach (var item in Model)
+    {
+    <div class="card col-md-6 col-xl-6 bg-black">
+      
+    <div class="card  col-md-7 mx-auto bg-black">
+      <h4 class="center">
+        <a class="currentpro-title" href="@Url.Action("Details", "Productions", new { id = item.ProductionId })">
+          @*.........................................Big text for play*@
+        if (item.DefaultPhoto != null)
+        {
+            @*adds resize effect on hover and shows info on the show*@
+          <a class="current-production-img currentpro-imgtran curprodimg" href="@Url.Action("Details", "Productions", new { id = item.ProductionId })">  
+            <img class="card-img-top production-index-img mt-3 bg-black " src="@Url.Action("DisplayPhoto", "Photo", new { id = item.DefaultPhoto.PhotoId })" alt="Card image cap">
+          <a class="current-production-img currentpro-imgtran curprodimg img-overlay" href="@Url.Action("Details", "Productions", new { id = item.ProductionId })">  
+            <img class="  card-img-top production-index-img mt-3 bg-black " src="@Url.Action("DisplayPhoto", "Photo", new { id = item.DefaultPhoto.PhotoId })" alt="Card image cap">
+          </a>
+        }
+        else
+        {
+          <a class="curprodimg currentpro-imgtran" href="@Url.Action("Details", "Productions", new { id = item.ProductionId })">
+            <img class="card-img-top production-index-img mt-3 bg-black" src="~/Content/Images/Unavailable.png" alt="Card image cap">
+            <img class="  card-img-top production-index-img mt-3  bg-black " src="~/Content/Images/Unavailable.png" alt="Card image cap">
+          </a>
+        }
+      }
+    <div class="currentpro-txthover">
+      @*classes for hover effect*@
+      <div class="currentpro-text currentpro-fontsize">
+        <h5 class="center currentpro-fontsize">
+        <h5 class="center currentpro-fontsize" > 
+          by @Html.DisplayFor(modelItem => item.Playwright)
+          <small style="font-size:.85vw;">
+          <small style="font-size:.8rem;">
+            @*.................................Small text for author*@
+            <br />
+            @if (item.IsWorldPremiere == true)
+            @Html.DisplayFor(modelItem => item.Description)
+          </small>
+        </h5>
+        <div class="currentpro-fontsize">
+        <div class="currentpro-fontsize " >
+          <p>
+            @item.OpeningDay.ToString("M/d/yy") - @item.ClosingDay.ToString("M/d/yy")<br /> @*shows open to close*@
+            <br />
+          </p>
+        </div>
+        <h5 class="currentpro-fontsize">
+        <h5 class="currentpro-fontsize" >
+          Final Showing: @item.ClosingDay.DayOfWeek @item.ClosingDay.ToString("MM/dd") at @if (item.ShowtimeMat != null)
+          {@item.ShowtimeMat.Value.ToString("hh:mm tt")}
+        </h5>
+
+		
+	</code>	
+		
